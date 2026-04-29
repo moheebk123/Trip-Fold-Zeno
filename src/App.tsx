@@ -1,5 +1,5 @@
 import Header from "@/components/common/Header";
-import PersonsBox from "@/components/person/PersonsBox";
+import PersonsBox from "@/components/persons/PersonsBox";
 import ExpensesBox from "@/components/expenses/ExpensesBox";
 import StatsBox from "./components/stats/StatsBox";
 import ExpenseContextProvider from "@/context/ExpenseContextProvider";
