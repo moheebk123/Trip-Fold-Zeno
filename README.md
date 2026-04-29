@@ -2,7 +2,7 @@
 
 A modern Trip Expense Calculator built with **React**, **TypeScript**, **Vite**, and **shadcn/ui** to manage shared trip expenses, meals, and participant-based balance calculations.
 
-This app helps groups split expenses smartly by allowing users to add members, create multiple expenses, assign participants for each expense, and calculate individual spending and balances in real time.
+This app helps groups split expenses smartly in days by allowing users to add members, create multiple expenses, assign participants for each expense, and calculate individual spending and balances in real time.
 
 ---
 
@@ -10,6 +10,7 @@ This app helps groups split expenses smartly by allowing users to add members, c
 
 - 👥 Add, edit, and remove trip members
 - 💵 Set per person budget
+- ⏳ Categorize expenses/meals into days
 - 🍽️ Add multiple expenses/meals
 - 👤 Participant-based expense splitting
 - ❌ Remove participants from an expense
