@@ -26,7 +26,7 @@ interface ExpenseContextType {
   changeExpense: (
     action: "add" | "remove" | "edit",
     expenseId?: number,
-    data?: any,
+    data?: Expense,
   ) => void;
 }
 

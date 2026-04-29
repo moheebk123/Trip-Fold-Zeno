@@ -54,9 +54,9 @@ function ExpenseContextProvider({ children }: { children: ReactNode }) {
   const changeExpense = (
     action: "add" | "remove" | "edit",
     expenseId?: number,
-    data?: any,
+    data?: Expense,
   ) => {
-    if (action === "add" && data.title) {
+    if (action === "add" && data?.title) {
       setExpenses((prev) => [...prev, { ...data, id: Date.now() }]);
     } else if (action === "edit" && data) {
       setExpenses((prev) =>

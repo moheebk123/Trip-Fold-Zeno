@@ -36,6 +36,7 @@ function AddExpense() {
     if (!selectedPersons.length || !selectedExpense || !expenseAmount) return;
 
     changeExpense("add", undefined, {
+      id: Date.now(),
       title: selectedExpense,
       amount: expenseAmount,
       participants: selectedPersons,
