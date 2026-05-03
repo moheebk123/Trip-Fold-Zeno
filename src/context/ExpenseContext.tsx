@@ -35,6 +35,7 @@ interface ExpenseContextType {
     dayId?: number,
     data?: number,
   ) => void;
+  deleteData: () => void;
 }
 
 export const ExpenseContext = createContext<ExpenseContextType>({
@@ -55,4 +56,5 @@ export const ExpenseContext = createContext<ExpenseContextType>({
   changePerson: () => {},
   changeExpense: () => {},
   changeDay: () => {},
+  deleteData: () => {},
 });

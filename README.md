@@ -16,6 +16,8 @@ This app helps groups split expenses smartly in days by allowing users to add me
 - ❌ Remove participants from an expense
 - 📊 Individual member expense calculation
 - ⚖️ Real-time balance tracking
+- 💾 Save trip data locally for future access
+- 🗑️ Delete all saved trip data with confirmation
 - 🎨 Modern UI with shadcn/ui + Tailwind CSS
 - 📱 Responsive design
 
@@ -23,6 +25,7 @@ This app helps groups split expenses smartly in days by allowing users to add me
 
 ## 📁 Project Structure
 
+- 📁 public
 - 📁 src
   - 📁 components       # Reusable UI components
   - 📁 context          # Expense context and provider
@@ -46,6 +49,7 @@ This app helps groups split expenses smartly in days by allowing users to add me
 - **UI Components**: shadcn/ui
 - **Icons**: Lucide React
 - **State Management**: React Context API
+- **Data Storage**: Browser LocalState
 
 ---
 

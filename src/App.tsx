@@ -1,7 +1,8 @@
 import Header from "@/components/common/Header";
+import Remove from "@/components/common/Remove";
 import PersonsBox from "@/components/persons/PersonsBox";
 import ExpensesBox from "@/components/expenses/ExpensesBox";
-import StatsBox from "./components/stats/StatsBox";
+import StatsBox from "@/components/stats/StatsBox";
 import ExpenseContextProvider from "@/context/ExpenseContextProvider";
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <div className="min-h-screen bg-linear-to-br from-slate-950 via-slate-900 to-slate-800 text-white flex flex-col items-center p-10">
       <Header />
       <ExpenseContextProvider>
+        <Remove />
         <PersonsBox />
         <ExpensesBox />
         <StatsBox />

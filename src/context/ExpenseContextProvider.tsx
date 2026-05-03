@@ -1,5 +1,6 @@
-import { useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { ExpenseContext } from "./ExpenseContext";
+import Loader from "@/components/common/Loader";
 
 interface Person {
   id: number;
@@ -14,11 +15,73 @@ interface Expense {
   day: number;
 }
 
+interface ExpenseData {
+  perPersonExpense: number;
+  persons: Person[];
+  expenses: Expense[];
+  days: number[];
+};
+
+const getInitialData = (): ExpenseData => {
+  const storedData = localStorage.getItem("expenseData");
+
+  if (!storedData) {
+    return {
+      perPersonExpense: 0,
+      persons: [],
+      expenses: [],
+      days: [],
+    };
+  }
+
+  try {
+    return JSON.parse(storedData) as ExpenseData;
+  } catch (error) {
+    console.error("Failed to parse expense data:", error);
+
+    return {
+      perPersonExpense: 0,
+      persons: [],
+      expenses: [],
+      days: [],
+    };
+  }
+};
+
 function ExpenseContextProvider({ children }: { children: ReactNode }) {
-  const [perPersonExpense, setPerPersonExpense] = useState<number>(0);
-  const [persons, setPersons] = useState<Person[]>([]);
-  const [expenses, setExpenses] = useState<Expense[]>([]);
-  const [days, setDays] = useState<number[]>([]);
+
+  const initialData: ExpenseData = getInitialData();
+
+
+  const [isLoading, setIsLoading] = useState(true);
+  const [perPersonExpense, setPerPersonExpense] = useState<number>(
+    initialData.perPersonExpense,
+  );
+  const [persons, setPersons] = useState<Person[]>(initialData.persons);
+  const [expenses, setExpenses] = useState<Expense[]>(initialData.expenses);
+  const [days, setDays] = useState<number[]>(initialData.days);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const expenseData: ExpenseData = {
+    perPersonExpense,
+    persons,
+    expenses,
+    days,
+    };
+
+    localStorage.setItem(
+      "expenseData",
+      JSON.stringify(expenseData),
+    );
+  }, [perPersonExpense, persons, expenses, days]);
 
   const changePerPersonExpense = (newPerPersonExpense: number) =>
     setPerPersonExpense(newPerPersonExpense);
@@ -93,6 +156,16 @@ function ExpenseContextProvider({ children }: { children: ReactNode }) {
     }
   };
 
+  const deleteData = () => {
+    setPerPersonExpense(0);
+    setPersons([]);
+    setExpenses([]);
+    setDays([]);
+    localStorage.removeItem("expenseData")
+  }
+
+  if (isLoading) return <Loader />;
+
   return (
     <ExpenseContext.Provider
       value={{
@@ -104,6 +177,7 @@ function ExpenseContextProvider({ children }: { children: ReactNode }) {
         changePerson,
         changeExpense,
         changeDay,
+        deleteData
       }}
     >
       {children}
