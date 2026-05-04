@@ -30,29 +30,32 @@ function ExpenseMembers({ expense }: { expense: Expense }) {
   };
 
   return (
-    <div className="mt-3 flex flex-wrap gap-2">
-      {expense.participants.map((personId) => {
-        const person = persons.find((p) => p.id === personId);
-        if (!person) return null;
+    <div className="mt-3 border p-3 rounded-lg space-y-3">
+      <h3>Members</h3>
+      <div className="flex flex-wrap gap-2">
+        {expense.participants.map((personId) => {
+          const person = persons.find((p) => p.id === personId);
+          if (!person) return null;
 
-        return (
-          <Badge
-            key={person.id}
-            variant="secondary"
-            className="flex items-center gap-1 px-3 py-1 rounded-full"
-          >
-            {person.name}
-
-            {/* Remove from meal */}
-            <button
-              className="ml-1 hover:text-red-400"
-              onClick={() => handleRemoveParticipant(person.id)}
+          return (
+            <Badge
+              key={person.id}
+              variant="secondary"
+              className="flex items-center gap-1 px-3 py-1 rounded-full"
             >
-              <X size={12} />
-            </button>
-          </Badge>
-        );
-      })}
+              {person.name}
+
+              {/* Remove from meal */}
+              <button
+                className="ml-1 hover:text-red-400"
+                onClick={() => handleRemoveParticipant(person.id)}
+              >
+                <X size={12} />
+              </button>
+            </Badge>
+          );
+        })}
+      </div>
     </div>
   );
 }
