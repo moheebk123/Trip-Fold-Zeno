@@ -1,4 +1,4 @@
-import loaderImg from "/favicon.svg";
+import loaderImg from "/trip-fold-zeno.png";
 
 function Loader() {
   return (
@@ -7,7 +7,7 @@ function Loader() {
       <img
         src={loaderImg}
         alt="Loading"
-        className="w-20 h-20 sm:w-24 sm:h-24 animate-bounce"
+        className="w-40 h-40 animate-bounce"
       />
 
       {/* Loading Text */}
