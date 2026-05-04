@@ -6,7 +6,7 @@ function Links() {
       {window.document ? (
         <a
           className="border flex gap-2 items-center justify-center p-2 rounded-full cursor-pointer hover:bg-white/5"
-          href="https://moheeb-trip-expense-calculator.vercel.app"
+          href="https://trip-fold-zeno.vercel.app"
           target="_blank"
         >
           <Globe size={16} />
