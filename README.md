@@ -1,4 +1,7 @@
-# 💰 Trip Expense Calculator
+<h1 align="center" style="display: flex; align-items: center; gap: 10px;">
+  <img src="./public/trip-fold-zeno.png" width="40" />
+  Trip Fold Zeno
+</h1>
 
 A modern Trip Expense Calculator built with **React**, **TypeScript**, **Vite**, and **shadcn/ui** to manage shared trip expenses, meals, and participant-based balance calculations.
 
@@ -27,12 +30,12 @@ This app helps groups split expenses smartly in days by allowing users to add me
 
 - 📁 public
 - 📁 src
-  - 📁 components       # Reusable UI components
-  - 📁 context          # Expense context and provider
-  - 📁 lib              # Utility functions
+  - 📁 components # Reusable UI components
+  - 📁 context # Expense context and provider
+  - 📁 lib # Utility functions
 -
-- 📄 App.tsx           # Main app component
-- 📄 main.tsx          # App entry point
+- 📄 App.tsx # Main app component
+- 📄 main.tsx # App entry point
 - 📄 package.json
 - 📄 tsconfig.json
 - 📄 vite.config.ts
@@ -56,17 +59,20 @@ This app helps groups split expenses smartly in days by allowing users to add me
 ## ⚙️ Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/moheebk123/trip-expense-calculator.git
    cd trip-expense-calculator
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Run development server**
+
    ```bash
    npm run dev
    ```
@@ -80,17 +86,20 @@ This app helps groups split expenses smartly in days by allowing users to add me
 
 ## ✨ Screenshots
 
+- **Loading State**
+  ![Person Budget Management](./public/project-image-1.png)
+
 - **Person Budget**
-![Person Budget Management](./public/project-image-1.png)
+  ![Person Budget Management](./public/project-image-2.png)
 
 - **Members Management**
-![Members Management](./public/project-image-2.png)
+  ![Members Management](./public/project-image-3.png)
 
 - **Expense Management**
-![Expense Management](./public/project-image-3.png)
+  ![Expense Management](./public/project-image-4.png)
 
 - **Balance Summary**
-![Balance Summary](./public/project-image-4.png)
+  ![Balance Summary](./public/project-image-5.png)
 
 ---
 
@@ -118,6 +127,19 @@ This app helps groups split expenses smartly in days by allowing users to add me
 - 📤 Export trip summary
 - 🌙 Dark/Light mode toggle
 - ☁️ Database persistence
+
+---
+
+## 🌐 Live Demo
+
+- **Website**
+  [Trip Fold Zeno](https://trip-fold-zeno.vercel.app)
+
+- **Android App**
+  [Trip Fold Zeno](https://www.appcreator24.com/app4022416-dxm3vt)
+
+- **Download App**
+  <a href="/trip-fold-zeno.apk" download>Download</a>
 
 ---
 
