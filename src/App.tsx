@@ -1,5 +1,6 @@
 import Header from "@/components/common/Header";
 import Remove from "@/components/common/Remove";
+import Links from "@/components/common/Links";
 import PersonsBox from "@/components/persons/PersonsBox";
 import ExpensesBox from "@/components/expenses/ExpensesBox";
 import StatsBox from "@/components/stats/StatsBox";
@@ -14,6 +15,7 @@ function App() {
         <PersonsBox />
         <ExpensesBox />
         <StatsBox />
+        <Links />
       </ExpenseContextProvider>
     </div>
   );
