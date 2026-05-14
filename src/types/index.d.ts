@@ -28,7 +28,7 @@ interface ExpenseInterface {
   amount: number;
   participants: PersonInterface[];
   trip: number;
-  date: string;
+  date: Date;
   paidBy?: PersonInterface;
   paidAmount?: number;
 }
