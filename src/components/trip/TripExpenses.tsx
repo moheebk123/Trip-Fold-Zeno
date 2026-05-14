@@ -203,7 +203,7 @@ function EditExpense({
       }),
     );
 
-    if (expense.participants.length !== participants) dispatch(
+    if (expense.participants.length !== participants.length) dispatch(
       expenseActions.editExpenseField({
         id: expense.id,
         field: "participants",
@@ -365,6 +365,7 @@ function EditExpense({
                     selected={date}
                     onSelect={setDate}
                     defaultMonth={date}
+                    required
                   />
                 </PopoverContent>
               </Popover>
@@ -551,8 +552,14 @@ function TripExpenses({
   const groupedExpenses = useMemo(() => {
     return tripExpenses.reduce(
       (acc: Record<string, ExpenseInterface[]>, expense) => {
-        if (!acc[expense.date]) acc[expense.date] = [];
-        acc[expense.date].push(expense);
+        const formattedDate = new Date(expense.date)
+          .toISOString()
+          .split("T")[0];
+
+        if (!acc[formattedDate]) acc[formattedDate] = [];
+
+        acc[formattedDate].push(expense);
+
         return acc;
       },
       {},

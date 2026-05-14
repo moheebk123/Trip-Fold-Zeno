@@ -14,6 +14,10 @@ import { Pencil, Check, Trash2, X, Plus } from "lucide-react";
 
 import type { ExpenseInterface, PersonInterface } from "@/types";
 
+interface TripMemberInterface extends PersonInterface {
+  index: number
+}
+
 function Member({
   member,
   totalExpense,
@@ -25,13 +29,13 @@ function Member({
     memberId?: number,
     newName?: string,
   ) => void;
-  member: PersonInterface;
+  member: TripMemberInterface;
   totalExpense: number;
   perPersonBudget: number;
 }) {
   const [isEditing, setIsEditing] = useState<boolean>(false);
 
-  const nameRef = useRef(null);
+  const nameRef = useRef<HTMLInputElement>(null);
 
   const dispatch = useDispatch();
 
@@ -120,7 +124,7 @@ function AddMember({
   ) => void;
   onClose: () => void;
 }) {
-  const nameRef = useRef(null);
+  const nameRef = useRef<HTMLInputElement>(null);
 
   const dispatch = useDispatch();
 

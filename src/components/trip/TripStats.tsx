@@ -38,7 +38,7 @@ function TripStats({
 }: TripStatsPropsInterface) {
   const [isEditing, setIsEditing] = useState<boolean>(false);
 
-  const amountRef = useRef(null);
+  const amountRef = useRef<HTMLInputElement>(null);
 
   const dispatch = useDispatch();
 
@@ -66,7 +66,7 @@ function TripStats({
   ];
 
   const handleEditAmount = () => {
-    const amount = amountRef.current?.value;
+    const amount = Number(amountRef.current?.value);
     if (!amount || amount < 1) {
       dispatch(alertActions.showAlert({ variant: "warning", message: "Please enter a valid per person budget!" }))
       return;
@@ -75,7 +75,7 @@ function TripStats({
     dispatch(tripActions.editTripField({id: tripId, field: "perPersonBudget", value: amount}))
     dispatch(alertActions.showAlert({ variant: "success", message: "Trip per person budget updated successfully!" }))
     setIsEditing(false);
-    if (amountRef.current) amountRef.current.value = 0;
+    if (amountRef.current) amountRef.current.value = "0";
   }
 
   return (

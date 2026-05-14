@@ -23,7 +23,7 @@ import type { ExpenseInterface, TripInterface } from "@/types";
 function Header({ tripId, tripTitle }: { tripId: number; tripTitle: string }) {
   const [isEditing, setIsEditing] = useState<boolean>(false);
 
-  const titleRef = useRef(null);
+  const titleRef = useRef<HTMLInputElement>(null);
 
   const dispatch = useDispatch();
 
