@@ -7,7 +7,7 @@ const tripSlice = createSlice({
   name: "trips",
   initialState: initialState,
   reducers: {
-    setTrips: (state, action) =>
+    setTrips: (_, action) =>
       action.payload && action.payload.length > 0 ? action.payload : [],
     deleteTrips: () => [],
     addTrip: (state, action) => {

@@ -7,7 +7,7 @@ const expenseSlice = createSlice({
   name: "expenses",
   initialState: initialState,
   reducers: {
-    setExpenses: (state, action) =>
+    setExpenses: (_, action) =>
       action.payload && action.payload.length > 0 ? action.payload : [],
     deleteExpenses: () => [],
     addExpense: (state, action) => {
