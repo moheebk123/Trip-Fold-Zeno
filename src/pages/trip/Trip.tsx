@@ -91,10 +91,10 @@ function Header({ tripId, tripTitle }: { tripId: number; tripTitle: string }) {
           tripTitle
         )}
       </h1>
-      <Pencil
+      {isEditing ? <></> : <Pencil
         className="text-blue-400 cursor-pointer"
         onClick={() => setIsEditing(true)}
-      />
+      />}
     </header>
   );
 }
