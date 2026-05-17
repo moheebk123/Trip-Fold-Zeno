@@ -173,14 +173,18 @@ function AddExpense({
   return (
     <Drawer open={open}>
       <DrawerTrigger asChild>
-        <Button variant="secondary" className="w-full py-5 text-lg" onClick={() => setOpen(true)}>
+        <Button
+          variant="secondary"
+          className="w-full py-5 text-lg"
+          onClick={() => setOpen(true)}
+        >
           <Plus size={18} />
           Add Expense
         </Button>
       </DrawerTrigger>
 
-      <DrawerContent className="bg-slate-950 text-white border-white/10 max-h-[90vh]">
-        <DrawerHeader className="border-b border-white/10 pb-5">
+      <DrawerContent className="bg-slate-950 text-white border-white/10 h-[95vh] sm:h-fit max-h-[95vh] flex flex-col">
+        <DrawerHeader className="border-b border-white/10 pb-5 shrink-0">
           <DrawerTitle className="text-lg font-bold text-white">
             Trip Fold Zeno
           </DrawerTitle>
@@ -335,7 +339,11 @@ function AddExpense({
 
         <DrawerFooter className="w-full max-w-lg mx-auto flex flex-row gap-2 shrink-0">
           <DrawerClose asChild>
-            <Button variant="destructive" className="w-1/2" onClick={() => setOpen(false)}>
+            <Button
+              variant="destructive"
+              className="w-1/2"
+              onClick={() => setOpen(false)}
+            >
               Cancel
             </Button>
           </DrawerClose>

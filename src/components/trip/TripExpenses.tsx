@@ -223,8 +223,8 @@ function EditExpense({
 
   return (
     <Drawer open={open} onOpenChange={onClose}>
-      <DrawerContent className="bg-slate-950 text-white border-white/10 max-h-[90vh]">
-        <DrawerHeader className="border-b border-white/10 pb-5">
+      <DrawerContent className="bg-slate-950 text-white border-white/10 h-[95vh] sm:h-fit max-h-[95vh] flex flex-col">
+        <DrawerHeader className="border-b border-white/10 pb-5 shrink-0">
           <DrawerTitle className="text-lg font-bold text-white">
             Edit Expense
           </DrawerTitle>
@@ -292,10 +292,7 @@ function EditExpense({
 
               <div className="flex gap-2 flex-wrap">
                 {participants.map((member) => (
-                  <Badge
-                    key={member.id}
-                    variant="secondary"
-                  >
+                  <Badge key={member.id} variant="secondary">
                     {member.name}
                   </Badge>
                 ))}

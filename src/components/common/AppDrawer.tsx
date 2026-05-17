@@ -35,7 +35,7 @@ function AppDrawer() {
 
       <DrawerContent className="bg-slate-950 text-white border-white/10">
         {/* Header */}
-        <DrawerHeader className="border-b border-white/10 pb-5">
+        <DrawerHeader className="border-b border-white/10 pb-5 shrink-0">
           <div className="flex items-center gap-3 mb-4">
             <img
               src={logo}
@@ -105,7 +105,7 @@ function AppDrawer() {
         </div>
 
         {/* Footer */}
-        <DrawerFooter className="border-t border-white/10 pt-4">
+        <DrawerFooter className="border-t border-white/10 pt-4 shrink-0">
           <Links />
 
           <DrawerClose asChild>
